@@ -14,4 +14,5 @@ print(True or False)
 print("True or False = ",True or False)
 #!
 print("not True: ",not True)
+#논리 연산자의 우선순위는 not and or 순이다
 

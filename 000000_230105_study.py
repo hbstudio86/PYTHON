@@ -26,3 +26,4 @@ print(sys.getrefcount(1))   #충격적이게도 python에서는 상수라고 했
                             #모두 객체로 취급한다.
                             #그래서 해당 객체가 몇 번 사용했는지 알 수 있다
 ## UNIT 8 ## : 비교 논리 연산
+print("복사본 TEST")

@@ -74,3 +74,7 @@ print(ar1)
 print(list(tp1))        #튜플을 리스트"처럼"사용할 수 있게 해준다
 print(type(list(tp1)))  #튜플이 리스트형이 되었다
 
+xx = int(input())
+#print(xx)
+tpx = tuple(range(-10,10,xx))
+print(tpx)

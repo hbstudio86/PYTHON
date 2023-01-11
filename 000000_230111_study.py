@@ -19,7 +19,7 @@ print(dic2['a'])    #=> index하는 문자열을 지정한다.
 
 # 3. 값으로 모든 자료형을 사용할 수 있다
 
-dic3 = {"int":10,"foat":11.5,"bool":False,"LIST":[44,55],"TUPLE":(66,77)}
+dic3 = {"int":10,"foat":11.5,"bool":False,"LIST":[44,55],"TUPLE":(66,77),int : 44,bool:True}
 print(dic3)
 
 # 4. 빈 디셔너리 만들기

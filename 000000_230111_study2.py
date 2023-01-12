@@ -36,3 +36,17 @@ if 5 < x:
         print("x는 10입니다.")
 if 33 != x:
     print("x는 33이 아닙니다.")
+
+
+# 연습문제
+
+price_1 = int(input())
+couphon = input()
+
+if "Cash3000" == couphon:
+    price_1 -= 3000
+    print(price_1)
+if "Cash5000" == couphon:
+    price_1 -= 5000
+    print(price_1)
+

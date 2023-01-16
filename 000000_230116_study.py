@@ -41,3 +41,12 @@ while True: #무한 루프
     print(i)
     if 10 == i:
         break
+
+
+# 연습 문제 #
+
+money = int(input("잔액을 입력하세요:"))
+
+while 1350 <= money:
+    money -= 1350
+    print(money)

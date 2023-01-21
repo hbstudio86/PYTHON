@@ -85,3 +85,49 @@ print("정렬후: c =", c , "\n\td = ", d)
 print(d)
 d.clear()
 print(d)
+
+# 2. 리스트 할당 / 복사
+
+#>> a = [...]의 경우 a는 리스트를 가리키고 있다고 이해하면 되겠다. 마치 포인터 처럼
+
+aa = [1,2,3]    # aa는 [1,2,3]이라는 리스트를 가리키고 있다.
+bb = aa         # bb에 aa를 할당하면 bb또한 aa가 가리키는 리스트를 가리키고 있는 것이다.
+                # c++에서의 참조 변수랑 어찌보면 같다고 볼 수 있겠다. 원본을 가리킨다는 점이
+print('aa: ', aa)
+print('bb: ', bb)
+print('aa is bb: ' , aa == bb)
+print('aa is bb: ' , aa is bb)
+
+aa[1] = 4       # 따라서 aa의 2번 index의 값을 변경하면 bb 또한 동일하다. (당연한거겠지만)
+
+print('aa: ', aa)
+print('bb: ', bb)
+print('aa is bb: ' , aa is bb)  # shallow 복사가 이루어 진다
+
+cc = aa.copy()  # copy 함수를 사용하면 deep 복사가 이루어 진다.
+
+print('aa: ', aa)
+print('cc: ', cc)
+print('aa is cc: ' , aa is cc)
+
+aa[1] = 9
+
+print('aa: ', aa)
+print('cc: ', cc)
+print('aa is cc: ' , aa is cc)
+
+
+# 3. 리스트와 반복문
+i = 0
+for x in cc:
+    print("cc[",i,"] = ",x,sep="")  #C/C++ Style 과 비슷하게 해버렸다.
+    i+=1
+
+#>> index 번호와 리스트를 같이 출력하려면 아래와 같은 문법을 쓴다.
+
+for index, value in enumerate(cc):
+    print(index,value)
+
+#>> 위의 형태를 좀 더 Python 스럽게 한다면...
+for index,value in enumerate(a, start=1):   # index 시작 번호를 지정할 수 있다.
+    print(index,value)

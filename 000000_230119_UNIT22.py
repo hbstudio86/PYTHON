@@ -131,3 +131,47 @@ for index, value in enumerate(cc):
 #>> 위의 형태를 좀 더 Python 스럽게 한다면...
 for index,value in enumerate(a, start=1):   # index 시작 번호를 지정할 수 있다.
     print(index,value)
+
+
+# 4. 작은 값, 큰 값 찾기
+
+print(c)
+print(min(c))
+print(max(c))
+
+# 5. 총 합계 구하기
+
+print(sum(c))
+
+# 6. 리스트 컴프리헨션
+
+#>> 특정한 식을 리스트 내에서 선언할 수 있다.
+#>> a = [i for i in range(10)] 이런식으로 말이다.
+
+e = [i for i in range(10)]  # 뭔가 간단하지만 해석하기 힘들겠다.
+print(e)
+
+f = list(i for i in range(0,20,2))
+print(f)
+
+# if문도 넣을 수 있다.
+
+g = [i for i in range(10) if i % 2 == 0]
+print(g)
+
+# 복잡한 형태의 반복문
+#>> 뭔가 더러운 문법이 만들어 지는것 같다...
+
+f = [ i * j for i in range(2,10)
+      for j in range(1,10)]
+print(f)
+
+#>> 리스트의 내포의 동작 순서는 뒤에서 앞이다.
+
+# 리스트 map사용하기
+
+print("정수형 리스트 e의 내용\n",e)
+e = list(map(float,e))
+print("실수형으로 변경 후 e의 내용\n",e)
+e = list(map(str,e))
+print("문자열로 변경 후 e의 내용\n",e)

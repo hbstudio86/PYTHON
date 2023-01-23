@@ -175,3 +175,25 @@ e = list(map(float,e))
 print("실수형으로 변경 후 e의 내용\n",e)
 e = list(map(str,e))
 print("문자열로 변경 후 e의 내용\n",e)
+
+
+# 7. TUPLE이용하기
+
+#>> TUPLE도 리스트와 마찬가지로 메서드를 사용할 수 있으나
+#>> 값이 불변이기에 APPEND와 같은 항목을 추가하는 것은 불가하다
+
+t1 = (1,2,3,4,5)    # t1 = tuple({1,2,3,4,5})
+print("3의 index는?",t1.index(3))
+print("1의 개수는?",t1.count(1))
+
+t2 = tuple(i for i in range(20) if i % 3 == 0)  # 이 문법에서는 가능하고 위에서는 {}를 써줘야 한다.
+print(t2)
+
+print(t1[2])
+
+
+# 심사 문제 #
+
+num, exp = map(int,input().split())
+t3 = [ 2 ** x for x in range(num,exp+1) if x != num + 1 and x != exp-1]
+print(t3)

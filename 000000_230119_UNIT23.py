@@ -40,3 +40,25 @@ for i in l3:
     for j in i:
         print(j,end=' ')
     print()
+
+for i in range(len(l3)):
+    #for j in range(len(i)):
+    for j in range(len(l3[i])):
+        print(l3[i][j],end=' ')
+    print()
+
+i = 0
+while i < len(l3):
+    x,y = l3[i];
+    print(x,y);
+    i+=1;
+
+i = 0
+j = 0
+while i < len(l3):
+    while j < len(l3[i]):
+        print(l3[i][j],end=' ')
+        j+=1
+    print()
+    i+=1
+    j=0

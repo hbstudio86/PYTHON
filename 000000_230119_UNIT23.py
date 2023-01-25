@@ -62,3 +62,43 @@ while i < len(l3):
     print()
     i+=1
     j=0
+
+# 3. for문으로 2차원 리스트 만들기
+
+l4 = [] # 빈 리스트를 하나 만들고
+x = 0
+y = 0
+for x in range(10):
+    inl4 = []   # 내부 원소를 저장할 빈 리스트 생성 계속 초기화 된다.
+    for y in range(2):
+        inl4.append(0)
+    l4.append(inl4)
+
+print(l4)
+
+# 4. 리스트 표현식으로 2차원 리스트 만들기
+
+l5 = [[ j for j in range(2)] for i in range(3)]
+print(l5)
+
+# 5. 2차원 리스트의 할당과 복사
+
+#>> 2차원 리스트는 copy 메서를 이용해도 shalow copyㅏ밖에 되지 않는다.
+
+test1 = [[1,2],[3,4]]
+test2 = test1           #앝은 복사
+print(test1,test2,sep="\n")
+test1[0][0] = 200
+print(test1,test2,sep="\n")
+test3 = test1.copy()
+print(test1,test3,sep="\n")
+test1[0][1] = 999
+print(test1,test3,sep="\n")
+
+import copy
+
+test4 = copy.deepcopy(test1)
+print(test1,test4,sep="\n")
+test1[1][0] = 444
+print(test1,test4,sep="\n")
+

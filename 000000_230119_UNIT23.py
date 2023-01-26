@@ -102,3 +102,40 @@ print(test1,test4,sep="\n")
 test1[1][0] = 444
 print(test1,test4,sep="\n")
 
+
+# 심사 문제 #
+col, row = map(int,input().split()) # 세로와 가로 입력
+matrix = [] #빈 리스트 생성
+for i in range(row):
+    matrix.append(list(input()))     # 한 줄식 리스트에 삽입
+Bcount = 0
+#print(matrix)
+#print(matrix[1][1])
+#print(type(col))
+#for i in range(col):
+#    for j in range(row):
+#        print(matrix[i][j])
+
+#>> 0 ~ n-1까지의 좌표가 정해진다.
+# -1,-1 | -1,0 | -1,+1 |
+# 0 , -1| 0,0  | 0, +1 |
+# +1,-1 | +1,0 | +1,+1 |
+#이렇게 뺀값이 스펙 이내이면 카운팅을 하고 아니면 카운팅을 하지 않으면 된다.
+offset = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,0],[0,1],[1,-1],[1,0],[1,1]]
+print(len(offset))
+for i in range(col):
+    for j in range(row):
+        Bcount = 0
+        for k in range(len(offset)):
+            #print("k:",k)
+            if 0 <= (i + offset[k][0]) < col and 0 <= (j + offset[k][1]) < row and matrix[i + offset[k][0]][j + offset[k][1]] == '*' and matrix[i][j] != '*':
+                #print("k=",k,"i=",i,"j=",j,"offset[k][0]=",offset[k][0],"offset[k][1]=",offset[k][1])
+                Bcount += 1
+                #print("3:",Bcount)
+        if matrix[i][j] != '*':
+            print(Bcount,end="")
+        else :
+            print('*',end="")
+    print()
+#print(Bcount)
+                

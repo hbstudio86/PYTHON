@@ -122,20 +122,14 @@ Bcount = 0
 # +1,-1 | +1,0 | +1,+1 |
 #이렇게 뺀값이 스펙 이내이면 카운팅을 하고 아니면 카운팅을 하지 않으면 된다.
 offset = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,0],[0,1],[1,-1],[1,0],[1,1]]
-print(len(offset))
-for i in range(col):
-    for j in range(row):
+for i in range(row):
+    for j in range(col):
         Bcount = 0
         for k in range(len(offset)):
-            #print("k:",k)
             if 0 <= (i + offset[k][0]) < col and 0 <= (j + offset[k][1]) < row and matrix[i + offset[k][0]][j + offset[k][1]] == '*' and matrix[i][j] != '*':
-                #print("k=",k,"i=",i,"j=",j,"offset[k][0]=",offset[k][0],"offset[k][1]=",offset[k][1])
                 Bcount += 1
-                #print("3:",Bcount)
         if matrix[i][j] != '*':
             print(Bcount,end="")
         else :
             print('*',end="")
-    print()
-#print(Bcount)
-                
+    print()               

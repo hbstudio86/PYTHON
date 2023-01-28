@@ -113,4 +113,4 @@ print(" %s ~ 나는 올해 %03d살이고, 몸무게는 %06.2f 야~~" % (str11 , 
 
 print(str10,'{0} {1} {2}'.format(str11,num1,flo1))
 
-print(f'Hello {str11} {num1} {flo1}')
+print(f'Hello {str11} {num1} {flo1}')   #이건 C#의 보간과 비슷해 보인다.

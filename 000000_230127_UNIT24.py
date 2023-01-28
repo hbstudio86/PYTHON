@@ -69,3 +69,48 @@ print("우공백 삭제:",str8.rstrip("#"))
 print("양공백 삭제:",str8.strip(","))
 
 #>> 제일 외곽의 특정 문자들이 삭제가 된다?
+
+# 8. 문자열 정렬
+#>> C/C++계열에서 필드 설정과 비슷해 보인다.
+
+str9 = 'TEST'
+print(str9.ljust(10))
+print(str9.rjust(10))
+print(str9.center(10))  # 이건 또 왜 Center여...
+
+# 9. 메서드 체이닝
+#>> 메서드를 연결해 사용할 수 있다.
+
+str10 = 'AbCdEfGHIjkl'
+print('원래 str10의 값:',str10)
+print('str10.center(20).upper() :',str10.center(20).upper())
+
+# 10. 0으로 채우기
+#>> 빈 필드에 0으로 채워 넣는다. C/C++ 계열에서 %02d와 같은 필드 옵션과 비슷해 보인다.
+
+print(str9.zfill(10))
+
+# 11. find 문자열 찾기
+#>> 문자열을 찾는다.
+
+print(str10.find('GH'))
+print(str10.find('gh'))
+print(str10.index('GH'))
+print(str10.rfind('GH'))
+
+print(str9.count('T'))
+
+# 12. formatting 이용하기
+#>> C/C++ 계열에서의 포매팅과 유사하다
+
+str11 = 'Hello'
+num1 = 10
+flo1 = 34.86
+
+print(" %s ~ 나는 올해 %03d살이고, 몸무게는 %06.2f 야~~" % (str11 , num1 , flo1)) # 번잡하네...
+
+#>> 좀 더 파이썬 스럽게 형식을 사용하자면...
+
+print(str10,'{0} {1} {2}'.format(str11,num1,flo1))
+
+print(f'Hello {str11} {num1} {flo1}')

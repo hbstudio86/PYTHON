@@ -124,9 +124,24 @@ print('{0:>10}'.format(str11))
 
 print("%03d" % 10)  # 포맷팅 문자와 쉼표로 구분하지않아서 어색하구만...
 print("{0:03d}".format(10))
-<<<<<<< HEAD
 
 
 # 심사 문제 #
-=======
->>>>>>> 597fd98ba4b4b793794d0a4da403664b01d49793
+
+strings = "the grown-ups' response, this time, was to advise me to lay aside my drawings of boa constrictors, whether from the inside or the outside, and devote myself instead to geography, history, arithmetic, and grammar. That is why, at the, age of six, I gave up what might have been a magnificent career as a painter. I had been disheartened by the failure of my Drawing Number One and my Drawing Number Two. Grown-ups never understand anything by themselves, and it is tiresome for children to be always and forever explaining things to the."
+
+listr = strings.split()
+print(strings.find('the'))
+print(len(listr))
+count = 0
+for i in listr:
+    print(i,end='')
+    #i = i.strip('.')
+    #i = i.strip(',')
+    i = i.strip(',.')   #이게 왜 되는거지??
+    if i == "the":
+        count+=1
+        print('------------ok--------------',count)
+    print()
+print(count)
+

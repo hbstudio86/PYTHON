@@ -114,3 +114,13 @@ print(" %s ~ 나는 올해 %03d살이고, 몸무게는 %06.2f 야~~" % (str11 , 
 print(str10,'{0} {1} {2}'.format(str11,num1,flo1))
 
 print(f'Hello {str11} {num1} {flo1}')   #이건 C#의 보간과 비슷해 보인다.
+
+#>> Format 메서드로 문자열 정렬하기
+
+print('{0:<10}'.format(str11))
+print('{0:>10}'.format(str11))
+
+#>> 숫자 길이 맞추기
+
+print("%03d" % 10)  # 포맷팅 문자와 쉼표로 구분하지않아서 어색하구만...
+print("{0:03d}".format(10))

@@ -41,3 +41,54 @@ print("dic1에서 k를 삭제 했을때, 값 지정",dic1.pop('k',0))
 
 del dic1['b']
 print("del dic1[]의 형태를 사용했을 때",dic1)
+
+#>> 임의 키-값을 삭제 하기... 이런게 왜 필요한것이지?
+
+dic2.update({4:"FOUR",5:"FIVE"})
+print("임의 삭제 전",dic2)
+print(dic2.popitem())   # 임의로 삭제한 킥-값은 튜플로 출력 된다.
+print("임의 삭제 후",dic2)
+
+#>> 모든 키-값을 삭제 하는 것은 clear() 메서드를 이용한다.
+
+# 3. 키-값 가져오기
+
+print(dic2.get(1))  # 이거랑
+print(dic2[3])      # 이거랑 무슨 차이? // 위의 형식이 더욱 복잡한데
+print(dic2.get(8,0))    # 없은 키캆의 경우 0을 리턴하도록 한다.
+
+#>> 모든 키-값을 가져오는 메서드
+
+print(dic2.items())
+
+#>> 모든 키를 가져오는 메서드
+
+print(dic2.keys())
+
+#>> 모든 값을 가져오는 메서드
+
+print(dic2.values())
+
+# 4. dictionary 만들기
+
+key_list = ['alpha','beta','charli','delta','echo','fox','golf']
+dic3 = dict.fromkeys(key_list)
+print(dic3)
+
+# 5. 반복문과 dictionary
+
+for i in dic2:
+    print(i,end='') # 이런 경우 값은 출력되지 않는다.
+
+print()
+
+for key, value in dic2.items(): # 이런 형태도 가능하다. for key, value in {'a':1,'b':2...}.items():
+    print(key,value)
+
+#>> key만, 값만 따로 받아 올 수 있다. 위에서 사용한 메서드인 keys(), values()가 그것이다.
+
+for key in dic2.keys():
+    print("key..",key)
+
+for value in dic2.values():
+    print("value..",value)

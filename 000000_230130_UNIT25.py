@@ -92,3 +92,45 @@ for key in dic2.keys():
 
 for value in dic2.values():
     print("value..",value)
+
+#>> dictionary 표현식으로 반복문을 이용해 dictionary 만들기 : 문법이 눈에 와닿지는 않는다.
+
+#
+#
+#        ┌-----┬--(키와 값이 할당)
+#        |      |        |     |
+#        v      v        |     |
+dic4 = {key : value for key, value in dict.fromkeys(key_list).items()}
+#                        ^     ^         fromkeys로 key가 생성 -> key와 value를
+#                        |     |                                      |
+#                        └----┴--------------(여기로 입력)------------┘
+#
+#
+print(dic4)
+
+#>> key와 value를 반대로 
+dic5 = {value2 : key2 for key2, value2 in dict.fromkeys(key_list).items()}
+print(dic5) #이건 none : 'golf" 밖에 출력하지 못함 : 이건 키가 모두 동일해서 덮어 쓰인거다
+
+#>> value에 강제로 값 할당
+
+dic6 = {key : 0 for key, value in dict.fromkeys(key_list).items()}
+print(dic6)
+
+l9 = [1,2,3,None,5,6,7]
+for kkk in l9:
+    print(kkk)
+
+#>> 디셔너리는 del로 삭제 하지 못한다. 오직 pop으로 키만 찾아 삭제가 가능하다.
+#>> 그럼 값을 보고 삭제 하려면 어떤 방식을 사용해야 하는가?
+#>> 위의 디셔너리 표현식으로 작성하되 if문으로 배제할 값을 빼고 출력하면 된다.
+
+dic10 = {'alpha':10,'beta':20,'charli':30,'delta':40,'echo':50}
+print(dic10)
+dic10 = {key : value for key, value in dic10.items() if value != 20}
+print(dic10)
+
+# 6. Dictionary 내의 Dictionary
+
+dic11 = {'A':{'A-1':30,'A-2':35},'B':{'B-1':11,'B-2':{'B-2-a':12.3,'B-2-b':12.8}}}
+print(dic11,dic11['A']['A-2'],dic11['B']['B-1'],dic11['B']['B-2']['B-2-a'],sep='\n')

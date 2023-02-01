@@ -186,6 +186,6 @@ test_value = [10, 20, 30, 40]
 
 test_dic = dict(zip(test_keys, test_value))
 
-test_dic = {key:value for key,value in test_dic.items() if key != 'delta' and value != 30}
+test_dic = {key:value for key,value in test_dic.items() if key != 'delta' and value != 30}  # 이 형식이 어려우면서도 쉽네?
 
 print(test_dic)

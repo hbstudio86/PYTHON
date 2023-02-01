@@ -134,3 +134,58 @@ print(dic10)
 
 dic11 = {'A':{'A-1':30,'A-2':35},'B':{'B-1':11,'B-2':{'B-2-a':12.3,'B-2-b':12.8}}}
 print(dic11,dic11['A']['A-2'],dic11['B']['B-1'],dic11['B']['B-2']['B-2-a'],sep='\n')
+
+# 7. Dictionary의 복사
+
+#>> 동일하게 대상이 지정이 되지 복사는 이루어지지 않는다
+
+dic12 = dic10
+print("dic12 is dic10 =",dic12 is dic10)
+print("dic10 = ",dic10)
+print("dic12 = ",dic12)
+dic10['bata'] = 80
+print("dic10 = ",dic10)
+print("dic12 = ",dic12)
+
+#>> dictionary는 copy로 복사가 된다.
+
+dic13 = dic10.copy()
+print("dic13 is dic10 =",dic13 is dic10)
+print("dic10 = ",dic10)
+print("dic13 = ",dic13)
+dic10['beta'] = 99
+print("dic10 = ",dic10)
+print("dic13 = ",dic13)
+
+#>> 중첩 dictionary는 copy로 복사가 되지 않는다.
+#>> deepcopy로 복사가 이루어진다.
+
+import copy
+
+dic14 = dic11.copy()
+print("dic11 is dic14=",dic11 is dic14)
+print("dic11:",dic11)
+print("dic14:",dic14)
+dic11['B']['B-1'] = 100
+print("dic11:",dic11)
+print("dic14:",dic14)
+dic15 = copy.deepcopy(dic11)
+print("dic11 is dic15=",dic11 is dic15)
+print("dic11:",dic11)
+print("dic15:",dic15)
+dic11['B']['B-1'] = 1100
+print("dic11:",dic11)
+print("dic15:",dic15)
+
+print(dic10.values())
+
+# 심사 문제 #
+
+test_keys = ['alpha', 'bravo', 'charlie', 'delta']
+test_value = [10, 20, 30, 40]
+
+test_dic = dict(zip(test_keys, test_value))
+
+test_dic = {key:value for key,value in test_dic.items() if key != 'delta' and value != 30}
+
+print(test_dic)

@@ -44,7 +44,31 @@ print(set.symmetric_difference(set5,set6))
 
 # 5. 집합 연산 후 할당 연산자 사용
 
-set5 |= {6}         # |=는 좌변값에 우변값을 차가 하는 것이다
+set5 |= {6}         # |=는 좌변값에 우변값을 추가 하는 것이다
 set5.update({7})    # 위의 형식을 메서드로 표현함
 
 print(set5)
+
+set5 &= {1,3,5,7,9} # &=는 좌변값에 우변값의 일치하는 부분만 추가를 한다.
+set5.intersection_update({1,3,4,5,7,8}) # 이 문법이 더 어렵네?
+print(set5)
+
+set5 -= {7}         # -=는 좌변값의 집합에서 우변값의 집합을 제거한다.
+set5.difference_update({3})
+print(set5)
+
+set5 ^= set6        # ^=는 좌변값의 집합에 우변값과 겹치지 않는 값을 저장한다.
+set5.symmetric_difference_update({11,12,13,14,15})
+print(set5)
+
+# 6. 부분집합, 진부분집합 여부 확인
+
+set7 = {1,2,3,4,5}
+set8 = {1,2,3,4,5}
+set9 = {1,2,3,4,5,6}
+
+print(set7<=set8)
+print(set7>=set8)
+
+print(set7>set9)
+print(set7<set9)

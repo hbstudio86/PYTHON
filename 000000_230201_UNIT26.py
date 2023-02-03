@@ -125,3 +125,20 @@ set10.clear()
 set10 = {i for i in {2,3,5,1,6,72}}
 set11 = {i for i in range(1,20) if i % 2 == 0}
 print(set10,"||",set11)
+
+# 심사 문제 #
+
+# 공약수 구하기
+
+print('두 정수를 입력하세요')
+input1, input2 = map(int,input().split())
+
+a = {i for i in range(1,input1+1,1) if input1 % i == 0}
+b = {i for i in range(1,input2+1,1) if input2 % i == 0}
+
+divisor = a & b
+result = 0
+if type(divisor) == set:
+    result = sum(divisor)
+
+print(result)

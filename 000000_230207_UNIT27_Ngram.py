@@ -69,3 +69,32 @@ print(word == ''.join(reversed(word)))
 
 for i in range(len(word)-1):
     print(word[i],word[i+1],sep='')
+
+#>> zip으로 2-gram 만들기
+#>> zip함수는 두 개 이상의 값을 하나의 튜플로 묶는 역할을 한다.
+
+text = 'hello'
+text2 = text[1:]    # 1~끝
+print(len(text),len(text2))
+two_gram = zip(text,text[1:])
+two_gram2 = zip(text,text[1:])
+#>> 위의 zip(text,text[1:])는
+#   text[0],text[1]을 묶어서 튜플 형태로 two_gram[0]에 들어 간다. 즉 two_gram[0] = (text[0],text[1])이 된다.
+
+print(tuple(two_gram))
+print(list(two_gram2))
+for i in two_gram:
+    print(i[0],i[1],sep="")
+
+#>> zip과 list 형식으로 N-gram 만들기
+
+print(list(zip(['hello','ello','llo'])))
+#>> 이 표현 방식의 경우 [~] 내의 hello ello llo가 하나의 리스트 덩어리이므로
+#   문자열 덩이리 하나씩 튜플이 되어 zip에 묶이게 된다.
+#   따라서 리스트 내의 문자열을 풀어써야 하는데 이를 리스트 언패킹이라 한다.
+#   리스트 언패킹을 하려면 리스트 형태 앞에 *(애스터리스크)를 붙혀 주기만 하면 된다.
+
+print(list(zip(*['hello','ello','llo'])))
+#>> 이러면 리스트의 각 문자열이 3개의 별개 인자로 작용하게 된다.
+#   즉, zip(hello를 담은 변수, ello를 담은 변수, llo를 담은 변수)와 같아 지게 되는것이다
+#   llo가 가장 길이가 짧으니 튜플은 3개씩 3묶음이 만들어진다.

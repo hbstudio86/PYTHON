@@ -98,3 +98,25 @@ print(list(zip(*['hello','ello','llo'])))
 #>> 이러면 리스트의 각 문자열이 3개의 별개 인자로 작용하게 된다.
 #   즉, zip(hello를 담은 변수, ello를 담은 변수, llo를 담은 변수)와 같아 지게 되는것이다
 #   llo가 가장 길이가 짧으니 튜플은 3개씩 3묶음이 만들어진다.
+
+
+# 연습 문제 #
+
+n = int(input())
+text = input()
+words = text.split()      
+if (n > len(words)):
+    print('wrong')
+else:
+    n_gram = [words[i:n+i:] for i in range(len(words)-n+1)]
+    for i in n_gram:
+        print(i)
+
+# 심사 문제 #
+
+with open('words.txt','r') as file:
+    #_is_read = None
+    while True:
+        _is_read = file.readline()
+        if _is_read != '':
+            pass # 회문인지 검사를 한다.

@@ -115,8 +115,18 @@ else:
 # 심사 문제 #
 
 with open('words.txt','r') as file:
-    #_is_read = None
     while True:
-        _is_read = file.readline()
-        if _is_read != '':
-            pass # 회문인지 검사를 한다.
+        _is_read = True
+        _str_read = file.readline()
+        _str_read = _str_read.strip('\n') #개행문자를 삭제
+        if _str_read != '':
+            lists = list(zip(_str_read,_str_read[::-1]))  #lists에 정방향 단어와 역방향 단어가 리스트 형식으로 저장 됨
+            for i in lists:
+                if i[0] != i[1]:
+                    _is_read = False
+                    break
+            if _is_read == True:
+                print(_str_read)
+        else:
+            break
+

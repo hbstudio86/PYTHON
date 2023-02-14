@@ -76,3 +76,62 @@ def person_infos(**args):
         print(key,value)
 
 person_infos(**dict1)
+
+x,y,z,k = 1,2,3,4
+
+def test_f(*args):
+    print(type(args))
+    return max(args)
+    
+
+print('max :',test_f(x,y,z,k))
+
+print('max2:',test_f(*[x,y,z,k]))
+
+print('max3:',test_f(*list2))
+
+
+
+# 심사 문제 #
+
+korean, english, mathematics, science = map(int, input().split())
+
+def get_min_max_score(*args):
+    return min(args), max(args)
+
+def get_average2(korean=None, english=None,mathematics=None, science=None):
+    count, total = 0, 0
+    if korean != None:
+        count += 1
+        total += korean
+    if english != None:
+        count += 1
+        total += english
+    if mathematics != None:
+        count += 1
+        total += mathematics
+    if science != None:
+        count += 1
+        total += science
+    if 0 == count or 0 == total:
+        return 0
+    else:
+        return total / count
+
+
+def get_average(**args):
+    print(type(args))
+    return sum(args.values()) / len(args.keys())
+
+
+
+min_score, max_score = get_min_max_score(korean, english, mathematics, science)
+average_score = get_average(korean=korean, english=english,
+                            mathematics=mathematics, science=science)
+print('낮은 점수: {0:.2f}, 높은 점수: {1:.2f}, 평균 점수: {2:.2f}'
+      .format(min_score, max_score, average_score))
+ 
+min_score, max_score = get_min_max_score(english, science)
+average_score = get_average(english=english, science=science)
+print('낮은 점수: {0:.2f}, 높은 점수: {1:.2f}, 평균 점수: {2:.2f}'
+      .format(min_score, max_score, average_score))

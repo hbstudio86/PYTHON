@@ -99,3 +99,31 @@ print(Humanoid.sum_num(1,2))    # 이게 왜 필요한거야?
 # 이것이 내가 생각한 개념인것 같은데... 내부에 접근하는... 근데 왜필요 한거야?
 
 
+# 심사 문제 #
+
+class Time:
+    def __init__(self, hour, minute, second):
+        self.hour = hour
+        self.minute = minute
+        self.second = second
+    @staticmethod
+    def is_time_valid(time_string):    # 판별
+        for i in list(map(int,time_string.split(":"))):
+            if i > 24:
+                return 0
+            
+    @classmethod
+    def from_string(cls,str):
+        cls.hour, cls.minute, cls.second = map(int,str.split(":"))  # 할당
+        
+        
+ 
+
+ 
+time_string = input()
+ 
+if Time.is_time_valid(time_string):
+    t = Time.from_string(time_string)
+    print(t.hour, t.minute, t.second)
+else:
+    print('잘못된 시간 형식입니다.')

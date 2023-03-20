@@ -108,17 +108,23 @@ class Time:
         self.second = second
     @staticmethod
     def is_time_valid(time_string):    # 판별
-        for i in list(map(int,time_string.split(":"))):
-            if i > 24:
-                return 0
+        chk_hour, chk_minute, chk_second = map(int,time_string.split(":")) # 판별 변수에 넣는다
+        if chk_hour > 24 or chk_minute > 59 or chk_second > 60:
+            #print(chk_hour,chk_minute,chk_second)
+            return 0    # 만약 적정 시간이 초과되면 0 반환
+        return 1        # 모두 만족되면 1을 반환
+        #for i in list(map(int,time_string.split(":"))):
+            #if i > 24:
+                #return 0
             
-    @classmethod
-    def from_string(cls,str):
-        cls.hour, cls.minute, cls.second = map(int,str.split(":"))  # 할당
-        
-        
- 
-
+    #@classmethod
+    #def from_string(cls, strings):
+    # hour, minute, second = map(int,strings.split(":"))
+    # return cls(hour,minute,second)
+    @staticmethod
+    def from_string(strings):
+        hour, minute, second = map(int,strings.split(":"))  # 할당 
+        return Time(hour,minute,second)
  
 time_string = input()
  
